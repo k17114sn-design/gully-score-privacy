@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gully Score Privacy Policy</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    color-scheme: light dark;
+    --pitch: #1B6B3A;
+    --pitch-strong: #14512C;
+    --ground: #F2F5F1;
+    --surface: #FFFFFF;
+    --ink: #1A2420;
+    --muted: #56645A;
+    --line: #D7E0D8;
+    --ball: #9C3B2E;
+    --ball-tint: #F3E4E0;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --pitch: #55B67A;
+      --pitch-strong: #7DCB9A;
+      --ground: #10160F;
+      --surface: #161D14;
+      --ink: #E8ECE6;
+      --muted: #9FB0A2;
+      --line: #263229;
+      --ball: #E08A72;
+      --ball-tint: #2C1B17;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --pitch: #55B67A;
+    --pitch-strong: #7DCB9A;
+    --ground: #10160F;
+    --surface: #161D14;
+    --ink: #E8ECE6;
+    --muted: #9FB0A2;
+    --line: #263229;
+    --ball: #E08A72;
+    --ball-tint: #2C1B17;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Public Sans", -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; }
+
+  a { color: var(--pitch-strong); text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--pitch); outline-offset: 2px; }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: clamp(28px, 6vw, 64px) 24px 96px;
+  }
+
+  header.masthead {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 28px;
+    margin-bottom: 36px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--pitch);
+    position: relative;
+    flex: none;
+  }
+  .mark::before,
+  .mark::after {
+    content: "";
+    position: absolute;
+    background: var(--surface);
+  }
+  .mark::before {
+    width: 26px;
+    height: 2px;
+    top: 12px;
+    left: 7px;
+    transform: rotate(-30deg);
+    border-radius: 2px;
+  }
+  .mark::after {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    bottom: 8px;
+    right: 7px;
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .brand .name {
+    font-family: "Poppins", "Public Sans", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .brand .tagline {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .eyebrow {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ball);
+    margin: 0 0 10px;
+  }
+
+  h1 {
+    font-family: "Poppins", "Public Sans", sans-serif;
+    font-weight: 700;
+    font-size: clamp(30px, 5vw, 40px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin: 0 0 14px;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+
+  .lede {
+    font-size: 17.5px;
+    color: var(--muted);
+    max-width: 62ch;
+    margin: 0 0 8px;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin-top: 22px;
+    font-size: 13.5px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .meta-row strong { color: var(--ink); font-weight: 600; }
+
+  .headline-box {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--pitch);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin: 40px 0 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .headline-box .kicker {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--pitch-strong);
+  }
+  .headline-box p {
+    margin: 0;
+    max-width: 62ch;
+  }
+
+  nav.toc {
+    margin: 0 0 52px;
+    padding: 20px 22px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+  nav.toc .kicker {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 12px;
+  }
+  nav.toc ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 20px;
+  }
+  nav.toc a {
+    font-size: 14.5px;
+    color: var(--ink);
+    text-decoration: none;
+    display: flex;
+    gap: 8px;
+  }
+  nav.toc a:hover { color: var(--pitch-strong); }
+  nav.toc a .num {
+    font-variant-numeric: tabular-nums;
+    color: var(--pitch);
+    font-weight: 600;
+    flex: none;
+  }
+
+  section.clause {
+    padding: 34px 0;
+    border-bottom: 1px solid var(--line);
+    max-width: 68ch;
+  }
+  section.clause:last-of-type { border-bottom: none; }
+
+  section.clause h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 21px;
+    letter-spacing: -0.005em;
+    margin: 0 0 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    text-wrap: balance;
+  }
+  section.clause h2 .num {
+    font-variant-numeric: tabular-nums;
+    color: var(--pitch);
+    font-family: "Public Sans", sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    flex: none;
+  }
+
+  section.clause p { margin: 0 0 14px; }
+  section.clause p:last-child { margin-bottom: 0; }
+
+  section.clause ul {
+    margin: 0 0 14px;
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  section.clause li::marker { color: var(--pitch); }
+
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 16px 0 4px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 13px;
+    border-radius: 999px;
+    background: var(--ball-tint);
+    color: var(--ball);
+    font-size: 13px;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.01em;
+  }
+  .pill.good { background: color-mix(in srgb, var(--pitch) 14%, transparent); color: var(--pitch-strong); }
+  .pill::before { content: "\25CF"; font-size: 8px; }
+
+  table.perm {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0 6px;
+    font-size: 14.5px;
+  }
+  table.perm th, table.perm td {
+    text-align: left;
+    padding: 10px 14px 10px 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  table.perm th {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .scroll-wrap { overflow-x: auto; }
+
+  footer.contact {
+    margin-top: 8px;
+    padding-top: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  footer.contact .kicker {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  footer.contact .email {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  footer.contact p { margin: 10px 0 0; color: var(--muted); font-size: 14px; max-width: 60ch; }
+
+  @media (max-width: 560px) {
+    nav.toc ol { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="masthead">
+    <div class="mark" aria-hidden="true"></div>
+    <div class="brand">
+      <span class="name">Gully Score</span>
+      <span class="tagline">Cricket scoring, built for the ground</span>
+    </div>
+  </header>
+
+  <p class="eyebrow">Privacy Policy</p>
+  <h1>How Gully Score handles your data</h1>
+  <p class="lede">In short: it mostly doesn't. Gully Score is built to work fully offline, and that design choice means there is no server collecting your scores, your team rosters, or your photos in the first place.</p>
+
+  <div class="meta-row">
+    <span><strong>Effective</strong> 29 August 2026</span>
+    <span><strong>Applies to</strong> Gully Score for Android</span>
+    <span><strong>Contact</strong> k17114sn@gmail.com</span>
+  </div>
+
+  <div class="headline-box">
+    <span class="kicker">The one thing to know</span>
+    <p>Every match, team, player and photo you add lives only on your own phone, in the app's local storage. Gully Score has no account system and no backend server, so there is nothing for us to collect, store on our side, or lose.</p>
+  </div>
+
+  <nav class="toc" aria-label="Sections">
+    <p class="kicker">In this policy</p>
+    <ol>
+      <li><a href="#data-we-collect"><span class="num">01</span>Data we collect</a></li>
+      <li><a href="#local-storage"><span class="num">02</span>Where your data lives</a></li>
+      <li><a href="#permissions"><span class="num">03</span>Permissions we ask for</a></li>
+      <li><a href="#backups"><span class="num">04</span>Exporting and backing up</a></li>
+      <li><a href="#third-parties"><span class="num">05</span>Third parties and advertising</a></li>
+      <li><a href="#children"><span class="num">06</span>Children's privacy</a></li>
+      <li><a href="#your-choices"><span class="num">07</span>Your choices</a></li>
+      <li><a href="#changes"><span class="num">08</span>Changes to this policy</a></li>
+    </ol>
+  </nav>
+
+  <section class="clause" id="data-we-collect">
+    <h2><span class="num">01</span>Data we collect</h2>
+    <p>Gully Score does not operate any server, database, or analytics platform that receives information from your device. We do not collect your name, email address, phone number, location, or any usage statistics — not because we've promised not to look, but because there is no pipe for that data to travel through.</p>
+    <div class="pill-row">
+      <span class="pill good">No account required</span>
+      <span class="pill good">No analytics SDK</span>
+      <span class="pill good">No data leaves your device</span>
+    </div>
+  </section>
+
+  <section class="clause" id="local-storage">
+    <h2><span class="num">02</span>Where your data lives</h2>
+    <p>Everything you enter — team names, player rosters, toss results, ball-by-ball scores, match history, and any team or player photos you add — is written to a private database that lives inside the app's own storage area on your phone. It is not synced, uploaded, or shared automatically with anyone, including us.</p>
+    <p>If you uninstall Gully Score, this data is removed along with it, in the same way any other app's local data would be. Because of this, we strongly recommend using the export feature described below before uninstalling or switching phones.</p>
+  </section>
+
+  <section class="clause" id="permissions">
+    <h2><span class="num">03</span>Permissions we ask for</h2>
+    <p>Gully Score requests a small number of Android permissions, each tied to a feature you choose to use. We don't request anything we don't have an immediate, visible use for.</p>
+    <div class="scroll-wrap">
+      <table class="perm">
+        <thead>
+          <tr><th>Permission</th><th>Why we ask</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Photos / media (Photo Picker)</td>
+            <td>Only when you tap to set a team crest or player photo. You pick a single image through Android's own picker; the app never gets browsing access to your full gallery.</td>
+          </tr>
+          <tr>
+            <td>Storage access (Save/open a file)</td>
+            <td>Only when you use Export or Import in Settings, so you can choose exactly where a backup file is saved or read from.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="clause" id="backups">
+    <h2><span class="num">04</span>Exporting and backing up</h2>
+    <p>Settings includes an <strong>Export data</strong> tool that writes your matches, teams, and stats to a single JSON file, and an <strong>Import data</strong> tool that reads one back in. Both use Android's standard file picker, so the file goes exactly where you tell it to — your device storage, an SD card, or wherever you choose to share it from there.</p>
+    <p>That file passes through your hands only. We never see it, store a copy of it, or have any way to access it once it leaves the app.</p>
+  </section>
+
+  <section class="clause" id="third-parties">
+    <h2><span class="num">05</span>Third parties and advertising</h2>
+    <p>Gully Score does not currently show ads or use any third-party advertising or analytics software. A reserved space for a future banner ad is visible in the app's layout, but no ad network is connected to it yet.</p>
+    <p>If that changes in a future update, this policy will be updated first, and the update will describe exactly what the advertising partner can see — which, given the app's offline design, would still exclude your match data, rosters, and photos.</p>
+  </section>
+
+  <section class="clause" id="children">
+    <h2><span class="num">06</span>Children's privacy</h2>
+    <p>Gully Score is a general-audience scoring tool and is not directed at children under 13. Since the app collects no personal information from any user, of any age, there is no data of a child's to be at risk in the first place. If you believe a child has used the app and you have concerns, you're welcome to contact us using the details below.</p>
+  </section>
+
+  <section class="clause" id="your-choices">
+    <h2><span class="num">07</span>Your choices</h2>
+    <ul>
+      <li>You can add, edit, or delete any team, player, or match at any time from inside the app — nothing requires our involvement.</li>
+      <li>You can export a full copy of your data whenever you like, and use it to move to a new phone.</li>
+      <li>You can revoke the photo or storage permission at any time from Android Settings; the app will simply ask again the next time you use the related feature.</li>
+      <li>Uninstalling the app deletes its local data from your device.</li>
+    </ul>
+  </section>
+
+  <section class="clause" id="changes">
+    <h2><span class="num">08</span>Changes to this policy</h2>
+    <p>If Gully Score's data practices change — for example, if a future version adds optional cloud sync or an ad network — we'll update this page and the "Effective" date above before that change ships, not after.</p>
+  </section>
+
+  <footer class="contact">
+    <p class="kicker">Questions</p>
+    <span class="email">k17114sn@gmail.com</span>
+    <p>For anything about this policy or how Gully Score works, reach out at the address above.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
